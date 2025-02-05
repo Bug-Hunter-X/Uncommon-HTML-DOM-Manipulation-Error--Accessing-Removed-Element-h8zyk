@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = ""; // Clearing the div
+      document.getElementById("myDiv").remove(); // Removing the div
+      document.getElementById("myDiv").innerHTML = "This text is reinserted."; //This will throw an error, because the element was removed
+    }
+  </script>
+</body>
+</html>
