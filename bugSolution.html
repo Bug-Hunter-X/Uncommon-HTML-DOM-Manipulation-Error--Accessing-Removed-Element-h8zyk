@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Corrected HTML</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      const myDiv = document.getElementById("myDiv");
+      if (myDiv) {  //Check if the element exists
+        myDiv.innerHTML = "";
+        myDiv.remove();
+        //Instead of trying to use the removed element, recreate it:
+        const newDiv = document.createElement("div");
+        newDiv.id = "myDiv";
+        newDiv.innerHTML = "This text is reinserted.";
+        document.body.appendChild(newDiv);
+      }
+    }
+  </script>
+</body>
+</html>
